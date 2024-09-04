@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div id="qrcode"></div>
+    <script>
+        function updateQRCode() {
+            var webAppUrl = 'https://script.google.com/macros/s/AKfycbyT4vFDMU54Iwz725J9FPJhRFjwR4ZZCBz9S2MINRZ50ygBWvcHyUDpXrXy5DH0fC4/exec';
+            document.getElementById('qrcode').innerHTML = ''; // Clear existing QR code
+            new QRCode(document.getElementById('qrcode'), webAppUrl);
+        }
+
+        setInterval(updateQRCode, 30000); // Update every 30 seconds
+        updateQRCode(); // Initial generation
+    </script>
+</body>
+</html>
